@@ -1,5 +1,5 @@
 {
-  "serviceName": "Dexterity",
+  "serviceName": "GDS Playground",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true
