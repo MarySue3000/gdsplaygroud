@@ -1,0 +1,8 @@
+{
+  "serviceName": "Dexterity",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}

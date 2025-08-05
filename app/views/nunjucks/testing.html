@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a href="../index.html" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- https://design-system.service.gov.uk/styles/typography/ -->
+<h1 class="govuk-heading-l">Components</h1>
+
+
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="accordion">Accordion</a>
+  </li>
+  <!-- <li>
+    <a class="govuk-link" href="#">Benefit overpayments</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Benefit fraud</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">More</a>
+  </li> -->
+</ul>
+
+{% endblock %}
