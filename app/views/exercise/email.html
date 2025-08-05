@@ -5,14 +5,25 @@
 {% set pageTitle ='Your email address' %}
 {% set seviceName ='Juggling Balls' %}
 
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "start"
+}) }}
+{% endblock %}
+
+
+
+
 {% block content %}
-
-
-
 <form action="#" method="post" novalidate>
 
 
-{# {{ govukInput({
+{# nunjucks test #}
+
+{{ govukInput({
 
 id: "[exercise][email]",
 name: "[exercise][email]", 
@@ -29,20 +40,22 @@ autocomplete: "email",
 value: data.exercise.email
 
 
-}) }} #}
+}) }}
 
 
+{# HTML test, something isn't right about the value #}
 
+{# 
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="email">
+    <label class="govuk-label govuk-label--l" for="[exercise][email]">
       {{pageName}}
     </label>
   </h1>
-  <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email" autocomplete='true' value= {{data['email']}}>
+  <input class="govuk-input govuk-input--width-20" id="[exercise][email]" name="[exercise][email]" type="email" autocomplete='true' value= {{data['email']}}>
 </div>
 
-
+ #}
 
 
 

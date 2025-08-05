@@ -1,12 +1,27 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Applying for a juggling license
+{% set pageTitle = 'Applying for a juggling license' %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "../index"
+}) }}
 {% endblock %}
 
-
-
 {% block content %}
+
+<h1 class="govuk-heading-l"> {{pageTitle}} </h1>
+
+<p class="govuk-body">This is a test to check your juggling abilities.</p>
+
+
+{{ govukButton({
+  text: "Start now",
+  href: "email",
+  isStartButton: true
+}) }}
 
 
 {% endblock %}
