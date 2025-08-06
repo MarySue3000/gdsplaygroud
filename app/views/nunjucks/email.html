@@ -18,10 +18,8 @@
 
 
 {% block content %}
-<form action="#" method="post" novalidate>
+<form novalidate method="post">
 
-
-{# nunjucks test #}
 
 {{ govukInput({
 
@@ -39,24 +37,7 @@ type: "email",
 autocomplete: "email",
 value: data.exercise.email
 
-
 }) }}
-
-
-{# HTML test, something isn't right about the value #}
-
-
-{# <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--l" for="[exercise][email]">
-      {{pageName}}
-    </label>
-  </h1>
-  <input class="govuk-input govuk-input--width-20" id="[exercise][email]" name="[exercise][email]" type="email" autocomplete='true' value= {{data['email']}}>
-</div> #}
-
-
-
 
 
 
