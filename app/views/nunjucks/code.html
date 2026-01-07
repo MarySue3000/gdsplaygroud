@@ -1,9 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName ='Your email address' %}
-
-{% set pageTitle ='Your email address' %}
-{% set seviceName ='Juggling Balls' %}
+{% set pageName ='Validate your email address' %}
 
 
 
@@ -16,11 +13,49 @@
 
 
 
-
 {% block content %}
 <form novalidate method="post">
 
 
+<!-- https://design-system.service.gov.uk/styles/typography/ -->
+<h1 class="govuk-heading-l">{{pageName}}</h1>
+
+<p class="govuk-body">A validation code was sent to your email: {{data.nunjucks.email}}.</p>
+
+<br>
+
+{# <h2 class="govuk-heading-m">Enter the code to validate your email.</h2> #}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Enter the validation code",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  
+
+  hint: {
+    text: "Use the code received in the email"
+  },
+  id: "[nunjucks][code]",
+  name: "[nunjucks][code]",
+  classes: 'govuk-input--width-5'
+
+
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "Didn't received a code?",
+  text: "Check the spam and deleted emails folder. If you still can't find it, you can request a new code."
+}) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
 
 
 </form>
