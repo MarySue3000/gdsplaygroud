@@ -6,4 +6,10 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Add your routes here
+router.post('/nunjucks/email', (req, res) => {
+    res.redirect('/nunjucks/code')
+})
+
+router.post('/nunjucks/code', (req, res) => {
+    res.redirect('/nunjucks/name')
+})

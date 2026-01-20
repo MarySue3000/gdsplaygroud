@@ -14,6 +14,12 @@
 
 
 {% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
 <form novalidate method="post">
 
 
@@ -24,41 +30,54 @@
 
 <br>
 
-{# <h2 class="govuk-heading-m">Enter the code to validate your email.</h2> #}
 
 {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+{# component 1 - input and text/label #}
 
 {{ govukInput({
   label: {
     text: "Enter the validation code",
-    classes: "govuk-label--s",
-    isPageHeading: false
+    classes: "govuk-label--m",
+    isPageHeading: false  
   },
   
-
   hint: {
     text: "Use the code received in the email"
   },
+
   id: "[nunjucks][code]",
   name: "[nunjucks][code]",
-  classes: 'govuk-input--width-5'
-
+  classes: 'govuk-input--width-5',
+  value: data.nunjucks.code
 
 }) }}
 
 
+{# component 2 - details #}
 {{ govukDetails({
   summaryText: "Didn't receive a code?",
   html: "Check the spam and deleted emails folder. If you still can't find it, you can <a class='govuk-link' href='email'>request a new code</a>."
 }) }}
 
-
+<div class="govuk-button-group">
 {{ govukButton({
   text: "Continue"
 }) }}
 
+ {{ govukButton({
+   text: "Cancel",
+   classes: "govuk-button--secondary",
+   href: "/nunjucks/start"
+ }) }}
 
 </form>
+
+      </div>
+    </div>
+  </main>
+</div>
 
 {% endblock %}
 

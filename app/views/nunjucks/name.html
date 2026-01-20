@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName ='Your name' %}
+
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<form novalidate method="post">
+
+<h1 class="govuk-heading-l">{{pageName}}</h1>
+
+{{ govukInput({
+  label: {
+    text: "Enter your first name",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  id: "[nunjucks][firstname]",
+  name: "[nunjucks][firstname]",
+
+  hint: {
+    text:"Or given name"
+  },
+
+  Value: data.new.firstname
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Enter your last name",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  id: "[nunjucks][lastname]",
+  name: "[nunjucks][lastname]",
+    hint: {
+    text:"Or surname name"
+  },
+
+  Value: data.new.lastname
+}) }}
+
+
+<div class="govuk-button-group">
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+  {{ govukButton({
+    text: "Cancel",
+    classes: "govuk-button--secondary",
+    href: "/nunjucks/start"
+  }) }}
+
+</div>
+
+</form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
