@@ -27,7 +27,7 @@
 {{ govukSelect({
   id: "[nunjucks][nationality]",
   name: "[nunjucks][nationality]",
-  classes: 'nationalityautocomplete',
+  classes: 'autocomplete',
   label: {
     text: "What is your nationality?",
     classes: "govuk-label--l",
@@ -304,7 +304,7 @@
 <script>
 
 accessibleAutocomplete.enhanceSelectElement({
-  selectElement: document.querySelector('.nationalityautocomplete')
+  selectElement: document.querySelector('.autocomplete')
 })
 
 </script>

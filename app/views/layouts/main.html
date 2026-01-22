@@ -6,15 +6,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
 
-{% block scripts %}
-
-{{super() }}
-
-<scripts src="/public/javascripts/components/accessible-autocomplete.js"> </scripts>
-
-{% endblock %}
-
-
 
 
 {% block header %}
@@ -25,3 +16,16 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     })}}
 
 {% endblock %}
+
+{% block scripts %}
+
+{{super() }}
+
+<script src="/public/javascripts/components/autocomplete.js"> </script>
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName ='TBC' %}
+
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<!-- place this before input fields -->
+<form  method="post" novalidate>
+
+<!-- place this after button to continue/submit -->
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+<div class="govuk-button-group">
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+  {{ govukButton({
+    text: "Cancel",
+    classes: "govuk-button--secondary",
+    href: "/nunjucks/start"
+  }) }}
+
+</div>
+
+
+</form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+

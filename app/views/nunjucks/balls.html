@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName ='Your name' %}
+{% set pageName ='How many balls can you juggle?' %}
 
 
 
@@ -22,39 +22,35 @@
 
 <form novalidate method="post">
 
-<h1 class="govuk-heading-l">{{pageName}}</h1>
 
-{{ govukInput({
-  id: "[nunjucks][firstname]",
-  name: "[nunjucks][firstname]",
-  label: {
-  
-    text: "Enter your first name",
-    classes: "govuk-label--s",
-    isPageHeading: false
+
+{{ govukRadios({
+  name: "[nunjucks][balls]",
+  idPrefix: "[nunjucks][balls]",
+   value: data.nunjucks.balls,
+
+  fieldset: {
+    legend: {
+      text: pageName,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
   },
+  items: [
+    {
+      value: "3 or more",
+      text: "3 or more"
 
-
-  hint: {
-    text:"Or given name"
-  },
-
-  Value: data.new.firstname
-}) }}
-
-{{ govukInput({
-  id: "[nunjucks][lastname]",
-  name: "[nunjucks][lastname]",
-  label: {
-    text: "Enter your last name",
-    classes: "govuk-label--s",
-    isPageHeading: false
-  },
-    hint: {
-    text:"Or surname"
-  },
-
-  Value: data.new.lastname
+    },
+    {
+      value: "1 or 2",
+      text: "1 or 2"
+    },
+    {
+      value: "0",
+      text: "None, I can't juggle"
+    }
+  ]
 }) }}
 
 

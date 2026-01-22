@@ -13,3 +13,11 @@ router.post('/nunjucks/email', (req, res) => {
 router.post('/nunjucks/code', (req, res) => {
     res.redirect('/nunjucks/name')
 })
+
+router.post('/nunjucks/name', (req, res) => {
+    res.redirect('/nunjucks/nationality')
+})
+
+router.post('/nunjucks/nationality', (req, res) => {
+    res.redirect('/nunjucks/balls')
+})
