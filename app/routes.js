@@ -21,3 +21,47 @@ router.post('/nunjucks/name', (req, res) => {
 router.post('/nunjucks/nationality', (req, res) => {
     res.redirect('/nunjucks/balls')
 })
+
+
+
+// router.post('/nunjucks/balls', (req, res) => {
+//     if(req.body.nunjucks.balls == "0") {
+//     res.redirect('/nunjucks/exit')
+
+//  } else {
+
+//     res.redirect('/nunjucks/trick')
+// }
+// })
+
+router.post('/nunjucks/balls', (req, res) => {
+    // Safely read the value; avoids crash if nothing selected
+    const balls = req.body?.nunjucks?.balls;
+
+    if (balls === "0") {
+        return res.redirect('/nunjucks/exit');
+
+    } else if (balls === "1 or 2" || balls === "3 or more") {
+        return res.redirect('/nunjucks/trick');
+
+    } else {
+        // This covers: nothing selected, undefined, empty, or unexpected value
+        return res.redirect('/nunjucks/balls-error');
+    }
+});
+
+router.post('/nunjucks/balls-error', (req, res) => {
+    // Safely read the value; avoids crash if nothing selected
+    const balls = req.body?.nunjucks?.balls;
+
+    if (balls === "0") {
+        return res.redirect('/nunjucks/exit');
+
+    } else if (balls === "1 or 2" || balls === "3 or more") {
+        return res.redirect('/nunjucks/trick');
+
+    } else {
+        // This covers: nothing selected, undefined, empty, or unexpected value
+        return res.redirect('/nunjucks/balls-error');
+    }
+});

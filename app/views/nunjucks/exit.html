@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName ='TBC' %}
+{% set pageName ='You are not eligible for this license' %}
 
 
 
@@ -20,11 +20,12 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+<!-- https://design-system.service.gov.uk/styles/typography/ -->
+<h1 class="govuk-heading-l">You can't apply for a juggling license</h1>
 
-<div class="govuk-button-group">
-{{ govukButton({
-  text: "Continue"
-}) }}
+<p class="govuk-body">You must be able to juggle at least one ball to apply.</p>
+
+
 
   {{ govukButton({
     text: "Cancel",
@@ -32,7 +33,6 @@
     href: "/nunjucks/start"
   }) }}
 
-</div>
 
 
 

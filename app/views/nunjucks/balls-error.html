@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName ='How many balls can you juggle?' %}
+
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+<form novalidate method="post">
+
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select how many balls you can juggle",
+      href: "#balls"
+    }
+  ]
+}) }}
+
+{{ govukRadios({
+  name: "[nunjucks][balls]",
+  idPrefix: "[nunjucks][balls]",
+  value: data.nunjucks.balls,
+  errorMessage: {
+    text: "Select and option"
+  },
+ 
+
+  fieldset: {
+    legend: {
+      text: pageName,
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "3 or more",
+      text: "3 or more"
+
+    },
+    {
+      value: "1 or 2",
+      text: "1 or 2"
+    },
+    {
+      value: "0",
+      text: "None, I can't juggle"
+    }
+  ]
+
+
+}) }}
+
+
+<div class="govuk-button-group">
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+  {{ govukButton({
+    text: "Cancel",
+    classes: "govuk-button--secondary",
+    href: "/nunjucks/start"
+  }) }}
+
+</div>
+
+</form>
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
